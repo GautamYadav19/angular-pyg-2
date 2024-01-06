@@ -29,6 +29,12 @@ import { ProductCVIndexComponent } from './components/product-details/product-co
 import { ProductCVDescComponent } from './components/product-details/product-complete-view/product-cv-desc/product-cv-desc.component';
 import { ProductCVTableComponent } from './components/product-details/product-complete-view/product-cv-table/product-cv-table.component';
 import { ProductCVReviewComponent } from './components/product-details/product-complete-view/product-cv-review/product-cv-review.component';
+import { CheckoutIndexComponent } from './components/checkout/checkout-index/checkout-index.component';
+import { CheckoutFormComponent } from './components/checkout/checkout-form/checkout-form.component';
+import { CheckoutFormSummaryComponent } from './components/checkout/checkout-form-summary/checkout-form-summary.component';
+import { CartItemsComponent } from './components/cart/cart-items/cart-items.component';
+import { CartSummaryComponent } from './components/cart/cart-summary/cart-summary.component';
+import { CartAddedComponent } from './components/cart/cart-added/cart-added.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +64,13 @@ import { ProductCVReviewComponent } from './components/product-details/product-c
     ProductCVIndexComponent,
     ProductCVDescComponent,
     ProductCVTableComponent,
-    ProductCVReviewComponent
+    ProductCVReviewComponent,
+    CheckoutIndexComponent,
+    CheckoutFormComponent,
+    CheckoutFormSummaryComponent,
+    CartItemsComponent,
+    CartSummaryComponent,
+    CartAddedComponent
   ],
   imports: [
     BrowserModule,
