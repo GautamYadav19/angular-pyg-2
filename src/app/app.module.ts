@@ -35,6 +35,10 @@ import { CheckoutFormSummaryComponent } from './components/checkout/checkout-for
 import { CartItemsComponent } from './components/cart/cart-items/cart-items.component';
 import { CartSummaryComponent } from './components/cart/cart-summary/cart-summary.component';
 import { CartAddedComponent } from './components/cart/cart-added/cart-added.component';
+import { CartIndexComponent } from './components/cart/cart-index/cart-index.component';
+import { ContactusIndexComponent } from './components/contactus/contactus-index/contactus-index.component';
+import { ContactusFormComponent } from './components/contactus/contactus-form/contactus-form.component';
+import { ContactusInfoComponent } from './components/contactus/contactus-info/contactus-info.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +74,11 @@ import { CartAddedComponent } from './components/cart/cart-added/cart-added.comp
     CheckoutFormSummaryComponent,
     CartItemsComponent,
     CartSummaryComponent,
-    CartAddedComponent
+    CartAddedComponent,
+    CartIndexComponent,
+    ContactusIndexComponent,
+    ContactusFormComponent,
+    ContactusInfoComponent
   ],
   imports: [
     BrowserModule,
