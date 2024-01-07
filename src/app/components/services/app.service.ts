@@ -14,6 +14,9 @@ export class AppService {
   private HeaderMessage=new BehaviorSubject({message:'',title:''});
   getHeaderMessage=this.HeaderMessage.asObservable();
   
+  private crossbtn =new BehaviorSubject(false);
+  getCrossbtn=this.crossbtn.asObservable();
+
   constructor() { }
 // and this is the method to set there value
   setFlagForSilder(flag:any){
@@ -21,5 +24,8 @@ export class AppService {
   }
   setHeaderMessage(msg:any){
     this.HeaderMessage.next(msg);
+  }
+  setCrossbtn(flag:boolean){
+    this.crossbtn.next(flag)
   }
 }

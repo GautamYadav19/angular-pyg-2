@@ -39,6 +39,7 @@ import { CartIndexComponent } from './components/cart/cart-index/cart-index.comp
 import { ContactusIndexComponent } from './components/contactus/contactus-index/contactus-index.component';
 import { ContactusFormComponent } from './components/contactus/contactus-form/contactus-form.component';
 import { ContactusInfoComponent } from './components/contactus/contactus-info/contactus-info.component';
+import { WishlistIndexComponent } from './components/wishlist/wishlist-index/wishlist-index.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { ContactusInfoComponent } from './components/contactus/contactus-info/co
     CartIndexComponent,
     ContactusIndexComponent,
     ContactusFormComponent,
-    ContactusInfoComponent
+    ContactusInfoComponent,
+    WishlistIndexComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+.parent-cross{
+    position: relative;
+}
+.child-cross{
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    height: 25px;
+    z-index: 1;
+    width: 26px;
+    font-size: 19px;
+    background-color: aliceblue;
+    border-radius: 50% 50%;
+}
