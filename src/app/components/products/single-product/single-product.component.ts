@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../../services/app.service';
 
 @Component({
   selector: 'app-single-product',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./single-product.component.css']
 })
 export class SingleProductComponent implements OnInit {
-
-  constructor() { }
+  crossbtn!:boolean;
+  constructor(private appService :AppService) {
+    this.appService.getCrossbtn.subscribe((data)=>{
+      this.crossbtn=data;
+    })
+   }
+  
 
   ngOnInit(): void {
   }
