@@ -41,6 +41,10 @@ import { ContactusFormComponent } from './components/contactus/contactus-form/co
 import { ContactusInfoComponent } from './components/contactus/contactus-info/contactus-info.component';
 import { WishlistIndexComponent } from './components/wishlist/wishlist-index/wishlist-index.component';
 
+import { AdminPannelRoutingModule } from './components/admin-pannel/admin-routing.module';
+import { AdminModule } from './components/admin-pannel/module';
+import { ContentIndexComponent } from './components/admin-pannel/content/content-index/content-index.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,11 +84,14 @@ import { WishlistIndexComponent } from './components/wishlist/wishlist-index/wis
     ContactusIndexComponent,
     ContactusFormComponent,
     ContactusInfoComponent,
-    WishlistIndexComponent
+    WishlistIndexComponent,
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AdminModule,
+    AdminPannelRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
