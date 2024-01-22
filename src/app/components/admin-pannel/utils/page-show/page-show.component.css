@@ -1,0 +1,7 @@
+.text-muted{
+    --bs-text-opacity: 1;
+    color: #b4b2b7 !important;
+}
+.text-secondary{
+    color: hsla(0, 0%, 0%, 0.564) !important;
+}

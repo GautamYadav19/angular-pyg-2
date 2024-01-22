@@ -11,10 +11,11 @@
                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                <ul class="collapse list-unstyled" id="homeSubmenu">
                    <li>
-                       <a href="#">Home 1</a>
+                       <a [routerLink]="['',{outlets:{admins:['admin','add-product']}}]" href="#">Add Product</a>
                    </li>
                    <li>
-                       <a href="#">Home 2</a>
+                    <a routerLink="add-product" href="#">Add Product</a>
+
                    </li>
                    <li>
                        <a href="#">Home 3</a>
@@ -89,6 +90,8 @@
                </div>
            </div>
        </nav>
+<!-- -->
+<!-- <router-outlet ></router-outlet> -->
 <app-content-index></app-content-index>
    </div>
 </div>
