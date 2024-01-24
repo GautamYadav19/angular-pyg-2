@@ -430,72 +430,7 @@ VALUES
     (2, 1),
     (1, 3);
 
- SELECT
-    i.image_ID,
-    i.path AS image_path,
-    i.created_at AS image_created_at,
-    i.modified_at AS image_modified_at,
-    tf.tableFormateId,
-    tf.headerName,
-    tf.description AS table_description,
-    tf.created_at AS table_created_at,
-    tf.modified_at AS table_modified_at,
-    lf.listFormateId,
-    lf.description AS list_description,
-    lf.created_at AS list_created_at,
-    lf.modified_at AS list_modified_at,
-    d.description_ID,
-    d.tableFormateId AS desc_table_format_id,
-    d.listFormateId AS desc_list_format_id,
-    d.created_at AS desc_created_at,
-    d.modified_at AS desc_modified_at,
-    p.price_compare_ID,
-    p.fixedPrice,
-    p.fackPrice,
-    p.created_at AS price_created_at,
-    p.modified_at AS price_modified_at,
-    inv.inventory_ID,
-    inv.quantity AS inventory_quantity,
-    inv.warranty AS inventory_warranty,
-    inv.created_at AS inventory_created_at,
-    inv.modified_at AS inventory_modified_at,
-    dt.discount_ID,
-    dt.name AS discount_name,
-    dt.discount_percentage,
-    dt.active AS discount_active,
-    dt.created_at AS discount_created_at,
-    dt.modified_at AS discount_modified_at,
-    pc.category_id,
-    pc.name AS category_name,
-    pc.description AS category_description,
-    pc.created_at AS category_created_at,
-    pc.modified_at AS category_modified_at,
-    prod.product_ID,
-    prod.name AS product_name,
-    prod.description_ID AS product_desc_id,
-    prod.category_id AS product_category_id,
-    prod.inventory_ID AS product_inventory_id,
-    prod.price_compare_ID AS product_price_id,
-    prod.discount_ID AS product_discount_id,
-    prod.image_ID AS product_image_id,
-    prod.created_at AS product_created_at,
-    prod.modified_at AS product_modified_at,
-    r.relativeProductId,
-    r.product_ID AS relative_product_id,
-    r.relative_Product_id AS relative_product_id
-FROM
-    Image_Table i
-JOIN TablesFormate_Table tf ON i.image_ID = tf.tableFormateId
-JOIN ListFormate_Table lf ON i.image_ID = lf.listFormateId
-JOIN Description_Table d ON i.image_ID = d.description_ID
-JOIN Price_compare_table p ON i.image_ID = p.price_compare_ID
-JOIN Product_Inventory inv ON i.image_ID = inv.inventory_ID
-JOIN discount_table dt ON i.image_ID = dt.discount_ID
-JOIN Product_Category pc ON i.image_ID = pc.category_id
-JOIN Product_table prod ON i.image_ID = prod.product_ID
-JOIN RelativeProductTable r ON i.image_ID = r.relativeProductId;
 
-----------------------------------------------------------------------------------
 SELECT
     p.product_ID,
     p.name AS product_name,
