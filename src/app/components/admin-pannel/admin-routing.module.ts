@@ -6,8 +6,6 @@ import { AdminNavbarComponent } from "./admin-navbar/admin-navbar.component";
 
 const routes : Routes=[
 {path:"admin",component:AdminNavbarComponent},
-// {path:'user',component:HomeComponent,outlet:'userpannel'}
-
 {path:'admin/add-product',component:AddProductComponent}
 ]
 

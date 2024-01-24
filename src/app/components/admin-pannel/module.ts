@@ -8,6 +8,7 @@ import { ContentIndexComponent } from "./content/content-index/content-index.com
 import { AddProductComponent } from "./content/product/add-product/add-product.component";
 import { PageShowComponent } from "./utils/page-show/page-show.component";
 import { ThreeBtnSecComponent } from "./content/product/three-btn-sec/three-btn-sec.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     declarations:[
@@ -19,7 +20,7 @@ import { ThreeBtnSecComponent } from "./content/product/three-btn-sec/three-btn-
     ThreeBtnSecComponent,
 
     ],
-    imports:[BrowserModule,RouterModule,CommonModule],
+    imports:[BrowserModule,RouterModule,CommonModule,ReactiveFormsModule,],
     
 })
 export class AdminModule{}
