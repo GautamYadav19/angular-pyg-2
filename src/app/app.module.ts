@@ -43,6 +43,9 @@ import { PaginationComponent } from './components/user-pannel/utils/pagination/p
 import { SliderComponent } from './components/user-pannel/utils/slider/slider.component';
 import { VendorComponent } from './components/user-pannel/vendor/vendor.component';
 import { WishlistIndexComponent } from './components/user-pannel/wishlist/wishlist-index/wishlist-index.component';
+import { LoginComponent } from './components/user-pannel/login/login.component';
+import { RegisterComponent } from './components/user-pannel/register/register.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,7 @@ import { WishlistIndexComponent } from './components/user-pannel/wishlist/wishli
     FeaturedComponent,
     FooterComponent,
     NavbarComponent,
-    OffersComponent,
+        OffersComponent,
     TopbarComponent,
     VendorComponent,
     SingleProductComponent,
@@ -83,7 +86,9 @@ import { WishlistIndexComponent } from './components/user-pannel/wishlist/wishli
     ContactusIndexComponent,
     ContactusFormComponent,
     ContactusInfoComponent,
-    WishlistIndexComponent
+    WishlistIndexComponent,
+    LoginComponent,
+    RegisterComponent
     
     
    
@@ -92,6 +97,7 @@ import { WishlistIndexComponent } from './components/user-pannel/wishlist/wishli
     BrowserModule,
     AppRoutingModule,
     AdminModule,
+    FormsModule,
     AdminPannelRoutingModule
   ],
   providers: [],
