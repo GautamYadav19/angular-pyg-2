@@ -27,7 +27,7 @@
                 <hr>
                     <h6 class="text-muted fw-light mb-2"></h6>
                         <h5 class="text-muted fw-light m-2">Product Description</h5>
-                            <div class="row px-xl-5">
+                            <div class="row px-xl-5" formGroupName="desc">
                             <div class="col">
                         <div class="nav nav-tabs  border-secondary mb-4">
                             <a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-1">list Formate</a>
@@ -48,28 +48,34 @@
 
                             </div>
                             <div class="tab-pane fade" id="tab-pane-2">
-                                <p class="text-muted fw-light" style="font-size: small;">(Add a new line when you want a
-                                    new line in user-pannel)
-                                </p>
-                                <div formArrayName="dtable" *ngFor="let table of dtable.controls" class="form-row mt-2" >
-                                    <div class="col">
-                                        <div class="input-container">
-                                            <input type="text" class="form-control input" id="myInput">
-                                            <label for="myInput" class="label ">Name </label>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="input-container">
-                                            <input type="text" class="form-control input" id="myInput">
-                                            <label for="myInput" class="label ">Category</label>
-                                        </div>
-                                    </div>
-                                </div>
-                              
-                                <div class="d-flex justify-content-end">
-                                    <button class="btn btn-outline-secondary mt-2" type="button" (click)="Add_dtable()" id="color-01">Add line</button>
-                                </div>
-                            </div>
+  <p class="text-muted fw-light" style="font-size: small;">(Add a new line when you want a
+    new line in user-pannel)
+  </p>
+
+  <div formArrayName="dtable" *ngFor="let table of dtable.controls; let i = index;" class="form-row mt-2">
+   <div class="row" [formGroupName]="i">
+
+    <div class="col">
+      <div class="input-container">
+        <input type="text" class="form-control input" formControlName="header" id="myInput{{ i }}0">
+        <label for="myInput{{ i }}" class="label">Name </label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="input-container">
+        <input type="text" class="form-control input" formControlName="des" id="myInput{{ i }}1">
+        <label for="myInput{{ i }}" class="label">Category</label>
+      </div>
+    </div>
+   </div>
+
+  </div>
+
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-outline-secondary mt-2" type="button" (click)="Add_dtable()" id="color-01">Add line</button>
+  </div>
+</div>
+
                         </div>
                     </div>
                 </div>
@@ -79,6 +85,7 @@
     <div class="col-lg-4 col-md-12 ">
         <div class="p-3  shadow bg-white rounded">
         <h5 class="text-muted fw-light m-2">Product information</h5>
+<div class="row" formGroupName="price">
 
             <div class="input-container">
                 <input type="text" class="form-control input" formControlName="realprice" id="myInput">
@@ -106,9 +113,13 @@
                     Charge tax on this product
                 </label>
             </div>
+</div>
+
         </div>
             <div class="p-3 mb-5 shadow bg-white rounded mt-2">
                 <h5 class="text-muted fw-light m-2">Inventory</h5>
+                <div class="row"  formGroupName="inventory">
+
                 <div class="input-container mt-2">
                     <input type="text" class="form-control input" id="myInput" formControlName="quantity">
                     <label for="myInput" class="label ">Quantity</label>
@@ -117,6 +128,8 @@
                     <input type="text" class="form-control input" id="myInput" formControlName="warranty">
                     <label for="myInput" class="label ">warranty</label>
                 </div>
+            </div>
+
         </div>
     </div>
 </div>

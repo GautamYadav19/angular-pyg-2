@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { AdminServiceService } from '../../../services/admin.service.service';
 import { FormBuilder, FormArray } from '@angular/forms';
 
@@ -17,36 +17,49 @@ export class AddProductComponent implements OnInit {
     pname:[''],
     Category:[''],
     image:[''],
-    // desc:this.formbuilder.group({
+    desc:this.formbuilder.group({
       dlist:this.formbuilder.array([this.formbuilder.control('')]),
-      dtable:this.formbuilder.array([this.formbuilder.control('')]) ,
-    // }),
-    // price:this.formbuilder.group({
+      dtable:this.formbuilder.array([
+      this.formbuilder.group({
+        header:[''],
+        des:['']
+      })
+    ]),
+  }),
+    price:this.formbuilder.group({
       fakeprice:[''],
       realprice:[''],
       percentage:[''],
       tax:[''],//isko database mai add nahi kara hai abhi,
-    // }),
-    // inventory:this.formbuilder.group({
+    }),
+    inventory:this.formbuilder.group({
       quantity:[''],
       warranty:['']
-    // }),
+    }),
   })
   get dlist(){
-    return (<FormArray>this.addProduct.get('dlist') as FormArray);
+    return (<FormArray>this.addProduct.get('desc.dlist') as FormArray);
   }
   ADD_dlist(){
     this.dlist.push(this.formbuilder.control(''))
   }
-  get dtable(){
-    return this.addProduct.get('dtable') as FormArray;
+  get dtable():FormArray{
+    return <FormArray>this.addProduct.get('desc.dtable') ;
   }
   Add_dtable(){
-    this.dtable.push(this.formbuilder.control(''))
+    this.dtable.push(
+      this.formbuilder.group({
+        header:[''],
+        des:['']
+      })
+
+    )
+   
   }
 
   ngOnInit(): void {
   }
+  
   onSubmit(){
     console.log(this.addProduct.value)
   }
