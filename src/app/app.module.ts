@@ -55,7 +55,7 @@ import { FormsModule } from '@angular/forms';
     FeaturedComponent,
     FooterComponent,
     NavbarComponent,
-        OffersComponent,
+    OffersComponent,
     TopbarComponent,
     VendorComponent,
     SingleProductComponent,

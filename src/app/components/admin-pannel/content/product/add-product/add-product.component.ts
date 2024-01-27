@@ -36,7 +36,9 @@ export class AddProductComponent implements OnInit {
       quantity:[''],
       warranty:['']
     }),
+      searchQuery: ['']
   })
+  searchResults: any[] = [];
   get dlist(){
     return (<FormArray>this.addProduct.get('desc.dlist') as FormArray);
   }
@@ -57,9 +59,24 @@ export class AddProductComponent implements OnInit {
    
   }
 
+
   ngOnInit(): void {
+this.category?.valueChanges.subscribe((data)=>{
+  this.searchResults=this.adminService.search(data)
+})
+
   }
-  
+  get category(){
+    return this.addProduct.get('Category');
+  }
+//   arr=['yash','gautam','pyg','yes'];
+//   SearchCategory(data:string){
+//  const s= this.arr.filter(item=>{
+//   console.log(item)
+//   item.toLowerCase().includes(data)
+//  })
+//  console.log(s)
+//   }
   onSubmit(){
     console.log(this.addProduct.value)
   }

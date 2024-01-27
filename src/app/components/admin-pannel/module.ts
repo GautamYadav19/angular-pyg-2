@@ -7,8 +7,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { ContentIndexComponent } from "./content/content-index/content-index.component";
 import { AddProductComponent } from "./content/product/add-product/add-product.component";
 import { PageShowComponent } from "./utils/page-show/page-show.component";
-import { ThreeBtnSecComponent } from "./content/product/three-btn-sec/three-btn-sec.component";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ThreeBtnSecComponent } from "./utils/three-btn-sec/three-btn-sec.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     declarations:[
@@ -20,7 +20,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     ThreeBtnSecComponent,
 
     ],
-    imports:[BrowserModule,RouterModule,CommonModule,ReactiveFormsModule,],
+    imports:[BrowserModule,RouterModule,CommonModule,FormsModule, ReactiveFormsModule,],
+    // providers: [SearchService],
     
 })
 export class AdminModule{}
