@@ -9,7 +9,6 @@ import { AppService } from '../services/app.service';
 export class HomeComponent implements OnInit {
 
   constructor(private appService:AppService) { 
-  this.appService.setFlagForSilder(1)  
   
   }
 

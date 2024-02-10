@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./three-btn-sec.component.css']
 })
 export class ThreeBtnSecComponent implements OnInit {
-
+  // saveVariable:string="save";
   constructor() { }
 
   ngOnInit(): void {
