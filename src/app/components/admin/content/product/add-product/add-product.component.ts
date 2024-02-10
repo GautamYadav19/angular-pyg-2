@@ -1,6 +1,7 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { AdminServiceService } from '../../../services/admin.service.service';
 import { FormBuilder, FormArray } from '@angular/forms';
+import { ApiServiceService } from '../../../Adminservice/api.service.service';
 
 @Component({
   selector: 'app-add-product',
@@ -9,7 +10,7 @@ import { FormBuilder, FormArray } from '@angular/forms';
 })
 export class AddProductComponent implements OnInit {
   
-  constructor(private adminService:AdminServiceService,private formbuilder:FormBuilder) { 
+  constructor(private adminService:AdminServiceService,private formbuilder:FormBuilder,private apiService:ApiServiceService) { 
     this.adminService.setPageShow("Add Product");
     console.log(this.dlist)
   }
@@ -36,7 +37,6 @@ export class AddProductComponent implements OnInit {
       quantity:[''],
       warranty:['']
     }),
-      searchQuery: ['']
   })
   searchResults: any[] = [];
   get dlist(){
@@ -69,16 +69,11 @@ this.category?.valueChanges.subscribe((data)=>{
   get category(){
     return this.addProduct.get('Category');
   }
-//   arr=['yash','gautam','pyg','yes'];
-//   SearchCategory(data:string){
-//  const s= this.arr.filter(item=>{
-//   console.log(item)
-//   item.toLowerCase().includes(data)
-//  })
-//  console.log(s)
-//   }
   onSubmit(){
     console.log(this.addProduct.value)
+    return this.apiService.createProduct(this.addProduct.value).subscribe((data)=>{
+      console.log(data)
+    })
   }
 
 }
