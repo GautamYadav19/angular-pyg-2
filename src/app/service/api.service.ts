@@ -30,8 +30,9 @@ export default class ApiService {
   }
   // get all employees
   getEmpployee() {
-    return this.http.get(`${this.baseUri}/employeelist`);
+    return this.http.get(`${this.baseUri}/getproductlist`);
   }
+  
   deleteemployee(id: any) {
     let url = `${this.baseUri}/employeedelete/${id}`;
     return this.http

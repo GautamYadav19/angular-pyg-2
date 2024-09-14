@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import ApiService from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-shop-main',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shop-main.component.css']
 })
 export class ShopMainComponent implements OnInit {
-
-  constructor() { }
+productList!:any;
+  constructor(private apiService:ApiService) { }
 
   ngOnInit(): void {
+    this.getProductList()
   }
-
+getProductList(){
+  this.apiService.getEmpployee().subscribe((data)=>{
+    this.productList=data
+    console.log(this.productList);
+    
+  })
+}
 }

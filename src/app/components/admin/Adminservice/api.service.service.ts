@@ -13,11 +13,11 @@ export class ApiServiceService {
   createProduct(product: any) {
     //later we update data type like an object kase bante ho
     return this.http
-      .post(`http://localhost:3000/api/createproduct`, product)
+      .post(`${this.baseUri}/createproduct`, product)
       .pipe(catchError(this.errorMsg));
   }
   getproductlist(){
-    return this.http.get(`${this.baseUri}/getproductlist`).pipe(catchError(this.errorMsg))
+    return this.http.get(`${this.baseUri}/getproductlist`);
   }
 
   errorMsg(error: HttpErrorResponse) {
